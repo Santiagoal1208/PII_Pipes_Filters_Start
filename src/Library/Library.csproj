@@ -1,10 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>PipesAndFilters</AssemblyName>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta0005" />
+
+    <ProjectReference Include="..\Twitter Library\Library.csproj" />
+    <ProjectReference Include="..\Library cognitive\Library.csproj" />
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\PII_TwitterApi\src\Library\Library.csproj" />

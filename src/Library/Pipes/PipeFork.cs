@@ -31,8 +31,12 @@ namespace CompAndDel.Pipes
         /// <param name="picture">imagen a filtrar y enviar a las siguientes cañerías</param>
         public IPicture Send(IPicture picture)
         {
-            next2Pipe.Send(picture.Clone());
-            return this.nextPipe.Send(picture);
+            FilterFace condicion = new FilterFace();
+            next2Pipe.Send(picture);
+            if (condicion.Filter(picture)){
+                return this.nextPipe.Send(picture);
+            }
+            return this.next2Pipe.Send(picture);
         }
     }
 }
